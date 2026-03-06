@@ -13,6 +13,9 @@ import {
   VideoClips,
   StarsCanvas,
 } from "./components";
+import Register from "./components/sections/Register";
+import Login from "./components/sections/Login";
+import Profile from "./components/sections/Profile";
 import { useEffect } from "react";
 import { config } from "./constants/config";
 
@@ -70,6 +73,18 @@ const VideoClipsPage = () => {
   );
 };
 
+// 个人中心页面组件
+const ProfilePage = () => {
+  return (
+    <>
+      <Profile />
+      <div className="relative z-0">
+        <StarsCanvas />
+      </div>
+    </>
+  );
+};
+
 const App = () => {
   useEffect(() => {
     if (document.title !== config.html.title) {
@@ -86,6 +101,9 @@ const App = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/culture" element={<CulturePage />} />
           <Route path="/videoclips" element={<VideoClipsPage />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/profile" element={<ProfilePage />} />
         </Routes>
       </div>
     </BrowserRouter>

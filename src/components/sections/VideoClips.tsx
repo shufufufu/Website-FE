@@ -5,15 +5,16 @@ import { fadeIn } from "../../utils/motion";
 import { Header } from "../atoms/Header";
 import { getProcessedVideos, VideoSeries } from "../../apis/videosAPI";
 import { styles } from "../../constants/styles";
+import { getCurrentUser, addWatchHistory } from "../../utils/auth";
 
 // 封面图片映射
 const getCoverImage = (seriesName: string): string => {
   const coverMap: { [key: string]: string } = {
-    '三凤求凰': 'http://t0yy8qojh.hn-bkt.clouddn.com//封面/三凤求凰.png',
-    '李三娘': 'http://t0yy8qojh.hn-bkt.clouddn.com//封面/李三娘.png',
-    '杨戬救母': 'http://t0yy8qojh.hn-bkt.clouddn.com//封面/杨戬救母.png',
-    '红楼梦-黛玉葬花': 'http://t0yy8qojh.hn-bkt.clouddn.com//封面/黛玉葬花.png',
-    '杨丽花芗剧－红楼梦-黛玉葬花': 'http://t0yy8qojh.hn-bkt.clouddn.com//封面/黛玉葬花.png',
+    '三凤求凰': 'http://xyty.site/封面/三凤求凰.png',
+    '李三娘': 'http://xyty.site/封面/李三娘.png',
+    '杨戬救母': 'http://xyty.site/封面/杨戬救母.png',
+    '红楼梦-黛玉葬花': 'http://xyty.site/封面/黛玉葬花.png',
+    '杨丽花芗剧－红楼梦-黛玉葬花': 'http://xyty.site/封面/黛玉葬花.png',
   };
   
   // 尝试精确匹配
@@ -38,6 +39,8 @@ const VideoClips = () => {
   const [error, setError] = useState<string | null>(null);
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
   const [playingVideo, setPlayingVideo] = useState<string | null>(null);
+  const [currentSeriesName, setCurrentSeriesName] = useState<string>('');
+  const [currentCoverImage, setCurrentCoverImage] = useState<string>('');
 
   useEffect(() => {
     const fetchVideos = async () => {
@@ -58,14 +61,29 @@ const VideoClips = () => {
     fetchVideos();
   }, []);
 
-  const handlePlayVideo = (videoUrl: string, videoTitle: string) => {
+  const handlePlayVideo = (videoUrl: string, videoTitle: string, seriesName: string, coverImage: string) => {
     setSelectedVideo(videoUrl);
     setPlayingVideo(videoTitle);
+    setCurrentSeriesName(seriesName);
+    setCurrentCoverImage(coverImage);
+    
+    // 记录观看历史
+    const currentUser = getCurrentUser();
+    if (currentUser) {
+      addWatchHistory(currentUser.phone, {
+        videoTitle,
+        videoUrl,
+        seriesName,
+        coverImage,
+      });
+    }
   };
 
   const handleCloseVideo = () => {
     setSelectedVideo(null);
     setPlayingVideo(null);
+    setCurrentSeriesName('');
+    setCurrentCoverImage('');
   };
 
   const copyToClipboard = async (text: string) => {
@@ -217,7 +235,7 @@ const VideoClips = () => {
                         >
                           {/* 视频缩略图区域 */}
                           <div className="aspect-video bg-gradient-to-br from-purple-900/30 to-blue-900/30 rounded-lg mb-3 relative overflow-hidden group cursor-pointer"
-                               onClick={() => handlePlayVideo(video.url, video.title)}>
+                               onClick={() => handlePlayVideo(video.url, video.title, series.seriesName, getCoverImage(series.seriesName))}>
                             {getCoverImage(series.seriesName) ? (
                               <>
                                 <img 

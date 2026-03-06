@@ -8,6 +8,7 @@ import { SectionWrapper } from "../../hoc";
 import { fadeIn } from "../../utils/motion";
 import { config } from "../../constants/config";
 import { Header } from "../atoms/Header";
+import { getCurrentUser } from "../../utils/auth";
 
 interface IServiceCard {
   index: number;
@@ -23,6 +24,14 @@ const ServiceCard: React.FC<IServiceCard> = ({ index, title, icon }) => {
       navigate('/culture');
     } else if (title === '片段欣赏') {
       navigate('/videoclips');
+    } else if (title === '个人中心') {
+      // 检查是否登录
+      const currentUser = getCurrentUser();
+      if (currentUser) {
+        navigate('/profile');
+      } else {
+        navigate('/login');
+      }
     }
   };
 
@@ -41,7 +50,7 @@ const ServiceCard: React.FC<IServiceCard> = ({ index, title, icon }) => {
         >
           <div 
             className={`bg-tertiary flex min-h-[280px] flex-col items-center justify-evenly rounded-[20px] px-12 py-5 ${
-              (title === '文化科普' || title === '片段欣赏') ? 'cursor-pointer hover:bg-tertiary/80 transition-colors' : ''
+              (title === '文化科普' || title === '片段欣赏' || title === '个人中心') ? 'cursor-pointer hover:bg-tertiary/80 transition-colors' : ''
             }`}
             onClick={handleClick}
           >

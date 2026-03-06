@@ -171,7 +171,7 @@ const testimonials: TTestimonial[] = [
     name: '钟睿',
     designation: '副教授',
     company: '华中师范大学计算机学院',
-    image: 'http://t0yy8qojh.hn-bkt.clouddn.com/avatar/F64E82EDAAABDE3E2E6F6D7D2EE1542B.jpg',
+    image: 'http://xyty.site/avator/F64E82EDAAABDE3E2E6F6D7D2EE1542B.jpg',
   },
   {
     testimonial:
@@ -179,11 +179,11 @@ const testimonials: TTestimonial[] = [
     name: '杨秀隆',
     designation: '讲师',
     company: '华中师范大学计算机学院',
-    image: 'http://t0yy8qojh.hn-bkt.clouddn.com/avatar/EAEB10E397644328A25A41C5BF69DDA2.jpg',
+    image: 'http://xyty.site/avator/EAEB10E397644328A25A41C5BF69DDA2.jpg',
   },
   {
     testimonial:
-      '台湾金宇园掌中剧团团长，剧团创立于 2008 年，剧团一直致力于发展“创艺”布袋戏的演出风格，让布袋戏不再只局限于古册戏、剑侠戏、金光戏等，而是可以很广泛、 天马行空与创新。荣获多 次云林国际偶戏节金掌奖剧本奖、视觉奖与操偶奖之殊荣，每年受邀出国参与演出等。用不同表演诠释布袋戏，让观众感受布袋戏的多元化演出，就是金宇园掌中剧团之特色。',
+      '台湾金宇园掌中剧团团长，剧团创立于 2008 年，剧团一直致力于发展"创艺"布袋戏的演出风格，让布袋戏不再只局限于古册戏、剑侠戏、金光戏等，而是可以很广泛、 天马行空与创新。荣获多 次云林国际偶戏节金掌奖剧本奖、视觉奖与操偶奖之殊荣，每年受邀出国参与演出等。用不同表演诠释布袋戏，让观众感受布袋戏的多元化演出，就是金宇园掌中剧团之特色。',
     name: '赵金统',
     designation: '团长',
     company: '金宇园掌中剧团',

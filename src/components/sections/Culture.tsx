@@ -51,7 +51,7 @@ const Culture = () => {
             剧中唯一横跨海峡的剧种</span>，也是两岸群众文艺交流的纽带。其足迹
             遍及于龙溪、晋江、厦门、台湾省及东南亚华侨居住地区。
           </motion.p>
-          <img src="http://t0yy8qojh.hn-bkt.clouddn.com//word图片/1.webp" alt="culture" className="w-full h-[700px] object-cover rounded-2xl mt-8" />
+          <img src="http://xyty.site/word图片/1.webp" alt="culture" className="w-full h-[700px] object-cover rounded-2xl mt-8" />
         </motion.div>
 
         {/* 剧种源流 */}
@@ -135,7 +135,7 @@ const Culture = () => {
                   <li>• 至1990年，全市有专业芗剧团6个，民间职业剧团50多个</li>
                 </ul>
               </div>
-              <img src="http://t0yy8qojh.hn-bkt.clouddn.com//word图片/2.jpg" alt="culture" className="w-full h-[600px] object-cover rounded-2xl mt-8" />
+              <img src="http://xyty.site/word图片/2.jpg" alt="culture" className="w-full h-[600px] object-cover rounded-2xl mt-8" />
             </div>
           </div>
         </motion.div>
@@ -187,7 +187,7 @@ const Culture = () => {
                 记》、《山伯英台》、《陈三五娘》、《安安寻母》等三十多出戏，
                 初步奠定了芗剧传统剧目的基础。
               </p>
-              <img src="http://t0yy8qojh.hn-bkt.clouddn.com//word图片/3.webp" alt="culture" className="w-full h-[600px] object-cover rounded-2xl mt-8" />
+              <img src="http://xyty.site/word图片/3.webp" alt="culture" className="w-full h-[600px] object-cover rounded-2xl mt-8" />
               <p>
                 &emsp;&emsp;新中国成立后，推行戏改政策，龙溪专区成立剧目工作室，组
                 织力量对传统剧目进行发掘、记录、整理。<span className="text-[#e3d7b1] font-semibold">芗剧老艺人口述的传统剧目有 984 个，至 1963 年记录 410 个</span>，其中
@@ -317,7 +317,7 @@ const Culture = () => {
                 分行，角色增加。芗剧音乐的特点是<span className="text-[#e3d7b1] font-semibold">唱多旁白少，曲调自由，旋律
                 优美，节奏强烈</span>，富有较强的表现力和乡土情调。
               </p>
-              <img src="http://t0yy8qojh.hn-bkt.clouddn.com//word图片/4.webp" alt="culture" className="w-full h-[600px] object-cover rounded-2xl mt-8" />
+              <img src="http://xyty.site/word图片/4.webp" alt="culture" className="w-full h-[600px] object-cover rounded-2xl mt-8" />
             </div>
 
             {/* 基本功训练 */}
